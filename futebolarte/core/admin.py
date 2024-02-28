@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Time
+from core.models import Time,Jogador
 
 @admin.register(Time)
 class TimeAdmin(admin.ModelAdmin):
@@ -8,5 +8,8 @@ class TimeAdmin(admin.ModelAdmin):
     list_filter = ['tem_mundial']
     search_fields = ['estado','cores'] 
 
+@admin.register(Jogador)
+class JogadorAdmin(admin.ModelAdmin):
+    list_display = ['nome','clube','posiçao_principal']
 
 # Register your models here.
